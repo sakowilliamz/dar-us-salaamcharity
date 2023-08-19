@@ -1,3 +1,49 @@
+<?php
+                
+    if(isset($_POST['send_mail'])){
+        
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone_number'];
+        $subject = $_POST['subjects'];
+        $message1 = $_POST['message'];
+        
+        $to = "info@graceonheartcharity.org";
+        $subject = "Message from Website.";
+        
+        $message = "<b>".$name."</b>";
+        $message .= "<p>From : ".$email.", "."$phone"."<br><b>Message: </b>".$message1."</p>";
+
+        $header = "From:.$email. \r\n";
+        $header .= "Cc:info@email.com \r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type: text/html\r\n";
+        
+        $retval = mail ($to,$subject,$message,$header);
+        
+        if( $retval == true ) {
+            ?>
+            
+                <script>
+                    alert("Successfully!", "Message sent successfully...", "success");
+                </script>
+            
+            <?php
+        }else {
+            ?>
+            
+            
+                <script>
+                    alert("Error!", "Message was not sent...", "error");
+                </script>
+            
+            <?php
+        }
+    }
+        
+            
+?>
+
 <!doctype html>
 <html lang="zxx">
     <head>
@@ -81,9 +127,9 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="index.html" class="nav-link">
+                                     <a href="index.html" class="nav-link">
                                         Home 
-                                    </a>
+                                    </a>                       
                                    
                                 </li>
 
@@ -93,11 +139,12 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="causes.html" class="nav-link active">
+                                <!-- <li class="nav-item">
+                                    <a href="causes.html" class="nav-link">
                                       Causes
                                     </a>
-                                </li>
+                                    
+                                </li> -->
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
@@ -124,13 +171,8 @@
                                             </a>
                                         </li>
 
-                                        <!-- <li class="nav-item">
-                                              <a href="events.html" class="nav-link">
-                                                Events 
-                                            </a>
-                                        </li>   -->
-                                   
-                                    </li>
+                                       
+
                                           <li class="nav-item">
                                             <a href="contact.php" class="nav-link">
                                                 Contact
@@ -140,15 +182,13 @@
                                 </li>
 
                                 <li class="nav-item">
-                                       <a href="blog-2.html" class="nav-link">
+                                    <a href="blog-2.html" class="nav-link">
                                         Blog 
-                                     
                                     </a>
-                                    
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.php" class="nav-link">
+                                    <a href="contact.html" class="nav-link active">
                                         Contact
                                     </a>
                                 </li>
@@ -156,16 +196,13 @@
 
                             <div class="others-options">
                                 <div class="dropdown language-switcher d-inline-block">
-                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img src="flag/ug.jpg" class="shadow" alt="image">
                                         <span>UG</span>
                                     </button>
 
-                                    <!--  -->
+                                    
                                 </div>
-
-                                
-
                                 <div class="burger-menu">
                                     <i class="flaticon-menu"></i>
                                 </div>
@@ -183,7 +220,7 @@
                 <div class="sidebar-about-area">
                     <div class="title">
                         <h2>About Us</h2>
-                        <p>Partnering to build a community where all children are able to receive education, health, shelter and food. and to make them feel like kings and queens, their lives and needs are the inspiration.</p>
+                        <p>We believe brand interaction is key in communication. Real innovations and a positive customer experience are the heart of successful communication. No fake products and services. The customer is king, their lives and needs are the inspiration.</p>
                     </div>
                 </div>
 
@@ -239,15 +276,11 @@
                             <h2>
                                 <a href="+256708831583">
                                     +256 708831583
-                                </a>
-                                <br>
-                                <a href="mailto:kaayaharuna@gmail.com">
-                                    <span class="__cf_email__">kaayaharuna@gmail.com</span>
-                                </a>
+                                </a><br>
                                 <span>OR</span>
-                              <a href="mailto:info@graceonheartcharity.org">
+                                 <a href="mailto:info@graceonheartcharity.org">
                                     <span class="__cf_email__">info@dar-us-salaamcharity.org</span>
-                                </a>
+                                </a> 
                             </h2>
     
                             <ul class="social">
@@ -290,11 +323,12 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="page-title-content">
-                            <h2>Our Causes</h2>
+                            <h2>Contact Us</h2>
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li>Our Causes</li>
-                            </ul>
+                                <li>Contact</li>
+                            </ul><br><br>
+                            <p>To make a donation, <a href="#" style="color:orange; font-size:15px;">please click here Donate</a>. For other correspondence:</p>
                         </div>
                     </div>
                 </div>
@@ -302,222 +336,127 @@
         </div>
         <!-- End Page Title Area -->
 
-        <!-- Start Causes Area -->
-        <section class="causes-section pt-100 pb-100">
+        <!-- Start Contact Area -->
+        <section class="contact-section ptb-100">
             <div class="container">
-                <div class="section-title">
-                    <span>
-                        <i class="flaticon-ribbon"></i>
-                        Our Causes
-                    </span>
-                    <h2>The problems to solve</h2>
-                    <p>Shotage of enough Facilities like food, water, school fees, chlothes, and others to these children forced us to start this charity to help them.</p>
-                </div>
-
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/pic1.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-book-1"></i>
+                    <div class="col-lg-4">
+                        <div class="contact-info-address">
+                            <h3>Quick Contact </h3>
+
+                            <div class="info-contact">
+                                <i class="flaticon-pin"></i>
+                                <h3>Location</h3>
+                                <span>Ttula Zone, Kawempe II Kampala</span>
                             </div>
 
-                            <div class="causes-content">
-                                <span>#Education</span>
-                                <h3>Kigonya Jovan</h3>
-                                <p>He is 8 years of age. He wants to be a pilot when he grows. However challenging the situation Kigonya is passing through, 
-                                    he never left his dream as he always keeps on persisting to progress in life.
-                                     Today his hobbies are soccer and playing football.</p>
-                                <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/pic2.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-laptop"></i>
+                            <div class="info-contact">
+                                <i class="flaticon-call"></i>
+                                <h3>Call Us</h3>
+                                <span><a href="tel:+256708831583">+256708831583</a></span>
+                                <span><a href="tel:+256757685799">+256757685799</a></span>
                             </div>
 
-                            <div class="causes-content">
-                                <span>#Donation</span>
-                                <h3>Nakibuuka Genesis</h3>
-                                <p>She is is 8 years of age. She is struggling with asthma and she would 
-                                    love to be a nurse when she gets good education. She likes playing 
-                                    volleyball and swimming. Her best colors are green and red.<br><br></p>
-                                    <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
-
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
+                            <div class="info-contact">
+                                <i class="flaticon-email"></i>
+                                <h3>Email Us</h3>
+                                <span>
+                                     <a href="mailto:info@graceonheartcharity.org">
+                                    <span class="__cf_email__">info@dar-us-salaamcharity.org</span>
+                                </a> 
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/3.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-blood-bag"></i>
+                    <div class="col-lg-8">
+                        <div class="contact-area">
+                            <div class="contact-content">
+                                <h3>Let’s talk</h3>
+                                <p>Contact us </p>
                             </div>
 
-                            <div class="causes-content">
-                                <span>#Helpless</span>
-                                <h3>Huge help to homeless pupil</h3>
-                                <p>Lets put our hands together to help this child and more out there 
-                                    that a in the same situation please. Becouse the also want to be in a good and better envilonment <br><br><br></p>
-                                    <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
+                            <div class="contact-form">
+                                <form id="contactForm" method="POST">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Name">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
 
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="email">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/pic4.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-book-1"></i>
-                            </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="subjects" name="subjects" id="subjects" class="form-control" required data-error="Please enter your subjects" placeholder="Subjects">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" id="message" cols="30" rows="6" required data-error="Write your message" placeholder="Write Something"></textarea>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
 
-                            <div class="causes-content">
-                                <span>#Education</span>
-                                <h3>Education for Kinene Ibrahim</h3>
-                                <p>He is 5 years old, in good health condition but struggling with 
-                                    school fees and study materials . He wants to become an accountant when he grows and gets education. 
-                                    He likes jumping rope and playing football as well.<br><br><br></p>                                
-                                    <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input name="gridCheck" value="I agree to the terms and privacy policy." class="form-check-input" type="checkbox" id="gridCheck" required>
+                                            
+                                                    <label class="form-check-label" for="gridCheck">
+                                                        I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a>
+                                                    </label>
+                                                    <div class="help-block with-errors gridCheck-error"></div>
+                                                </div>
+                                            </div>
+                                        </div>             
 
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/pic5.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-laptop"></i>
-                            </div>
-
-                            <div class="causes-content">
-                                <span>#Donation</span>
-                                <h3>donation to Katushabe Prossy</h3>
-                                <p>She is 9 years of age. She is a very interesting lady who always wants to 
-                                    jump a rope, she likes drawing and reading. 
-                                    Her future dream is to become judge when she completes her studies <br><br><br></p>
-                                    <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
-
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-causes">
-                            <img src="causes/pic6.jpg" alt="image">
-                            <div class="icon">
-                                <i class="flaticon-blood-bag"></i>
-                            </div>
-
-                            <div class="causes-content">
-                                <span>#Helpless</span>
-                                <h3>Huge help to Kiggundu Marvin</h3>
-                                <p>He is aged 3 years. He is in good health and he is not schooling. 
-                                    His dream is to become a Lawyer in future. But he can only achieve his dream through your support. 
-                                    His hobbies are, bicycling, swimming, reading and storytelling<br><br><br></p>
-                                    <a href="https://dashboard.flutterwave.com/donate/lolx34wnh7fd" class="causes-btn-one">
-
-                                    Donate Now
-                                    <i class="flaticon-right"></i>
-                                </a>
+                                        <div class="col-lg-12">
+                                            <div class="send-btn">
+                                                <button type="submit" name="send_mail" class="default-btn">
+                                                    Contact us
+                                                    <i class="flaticon-right"></i>
+                                                    <span></span>
+                                                </button>
+                                              
+                                            </div>
+                                            <!-- <div id="msgSubmit" class="h3 text-center hidden"></div> -->
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Causes Area -->
+        <!-- End Contact Area -->
 
-        <!-- Start Instagram Area -->
-         <div class="instagram-area">
-            <div class="instagram-slides owl-carousel owl-theme">
-                <div class="instagram-box">
-                    <img src="instagram/inst2.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-
-                <div class="instagram-box">
-                    <img src="instagram/pic5.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-
-                <div class="instagram-box">
-                    <img src="instagram/inst4.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-
-                <div class="instagram-box">
-                    <img src="instagram/inst3.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-
-                <div class="instagram-box">
-                    <img src="instagram/inst1.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-                <div class="instagram-box">
-                    <img src="instagram/pic6.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-                <div class="instagram-box">
-                    <img src="instagram/pic7.jpg" alt="image">
-
-                    <div class="icon">
-                        <i class="flaticon-instagram"></i>
-                    </div>
-
-                </div>
-            </div>
+        <!-- Start Map Area -->
+        <div class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.955051476512!2d32.561883131432964!3d0.3618280941538505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbaf289dba9b1%3A0xaddc37ac0da5a749!2sKawempe-Tula%20Road%2C%20Kampala!5e0!3m2!1sen!2sug!4v1691918145832!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <!-- End Instagram Area -->
-        
-        <!-- Start Footer Area -->
-         <footer class="footer-section pt-100">
+        <!-- End Map Area -->
+
+       <!-- Start Footer Area -->
+       <footer class="footer-section pt-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -644,12 +583,12 @@
                         <div class="row align-items-center">
                             <div class="col-lg-4">
                                 <div class="copyright-logo">
-                                    <!-- <img src="white-log.png" alt="image" width="80px"> -->
+                                    <!--<img src="white-log.png" alt="image" width="80px"> -->
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6">
-                                 <p>
+                                <p>
                                     <i class="far fa-copyright"></i> 
                                     Copyright @2023. All Rights Reserved by Dar-us-Salaam Charityorganisation and created by
                                     <a href="https://mrh4ck3r.epziy.com/" target="_blank">
@@ -657,17 +596,6 @@
                                     </a>
                                 </p>
                             </div>
-
-                            <!-- <div class="col-lg-4 col-md-6">
-                                <ul>
-                                    <li>
-                                        <a href="terms-condition.html">Terms & Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy.html">Privacy Policy</a>
-                                    </li>
-                                </ul>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -699,7 +627,7 @@
 		<!-- Appear JS --> 
         <script src="js/jquery.appear.js"></script>
 		<!-- Odometer JS --> 
-        <script src="js/odometer.min.js"></script>
+		<script src="js/odometer.min.js"></script>
         <!-- Image Light Box JS --> 
 		<script src="js/imagelightbox.min.js"></script>
 		<!-- Form Ajaxchimp JS -->
