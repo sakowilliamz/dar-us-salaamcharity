@@ -5755,7 +5755,7 @@ Page Title Area CSS
 .page-title-area {
   position: relative;
   z-index: 1;
-  background-image: url(../img/test.jpg);
+  background-image: url(test.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -6156,23 +6156,23 @@ Sidebar Widget Area Style
 }
 
 .widget-area .widget_huruma_posts_thumb .item .thumb .fullimage.bg1 {
-  background-image: url(../img/causes-details/pic1.jpg);
+  background-image: url(causes-details/pic1.jpg);
 }
 
 .widget-area .widget_huruma_posts_thumb .item .thumb .fullimage.bg2 {
-  background-image: url(../img/causes-details/pic5.jpg);
+  background-image: url(causes-details/pic5.jpg);
 }
 
 .widget-area .widget_huruma_posts_thumb .item .thumb .fullimage.bg3 {
-  background-image: url(../img/causes-details/pic3.jpg);
+  background-image: url(causes-details/pic3.jpg);
 }
 
 .widget-area .widget_huruma_posts_thumb .item .thumb .fullimage.bg4 {
-  background-image: url(../img/causes-details/pic4.jpg);
+  background-image: url(causes-details/pic4.jpg);
 }
 
 .widget-area .widget_huruma_posts_thumb .item .thumb .fullimage.bg5 {
-  background-image: url(../img/causes-details/pic5.jpg);
+  background-image: url(causes-details/pic5.jpg);
 }
 
 .widget-area .widget_huruma_posts_thumb .item .info {
