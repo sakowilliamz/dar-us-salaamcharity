@@ -1,48 +1,48 @@
-<?php
+// <?php
                 
-    if(isset($_POST['send_mail'])){
+//     if(isset($_POST['send_mail'])){
         
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone_number'];
-        $subject = $_POST['subjects'];
-        $message1 = $_POST['message'];
+//         $name = $_POST['name'];
+//         $email = $_POST['email'];
+//         $phone = $_POST['phone_number'];
+//         $subject = $_POST['subjects'];
+//         $message1 = $_POST['message'];
         
-        $to = "info@graceonheartcharity.org";
-        $subject = "Message from Website.";
+//         $to = "info@graceonheartcharity.org";
+//         $subject = "Message from Website.";
         
-        $message = "<b>".$name."</b>";
-        $message .= "<p>From : ".$email.", "."$phone"."<br><b>Message: </b>".$message1."</p>";
+//         $message = "<b>".$name."</b>";
+//         $message .= "<p>From : ".$email.", "."$phone"."<br><b>Message: </b>".$message1."</p>";
 
-        $header = "From:.$email. \r\n";
-        $header .= "Cc:info@email.com \r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-type: text/html\r\n";
+//         $header = "From:.$email. \r\n";
+//         $header .= "Cc:info@email.com \r\n";
+//         $header .= "MIME-Version: 1.0\r\n";
+//         $header .= "Content-type: text/html\r\n";
         
-        $retval = mail ($to,$subject,$message,$header);
+//         $retval = mail ($to,$subject,$message,$header);
         
-        if( $retval == true ) {
-            ?>
+//         if( $retval == true ) {
+//             ?>
             
-                <script>
-                    alert("Successfully!", "Message sent successfully...", "success");
-                </script>
+//                 <script>
+//                     alert("Successfully!", "Message sent successfully...", "success");
+//                 </script>
             
-            <?php
-        }else {
-            ?>
+//             <?php
+//         }else {
+//             ?>
             
             
-                <script>
-                    alert("Error!", "Message was not sent...", "error");
-                </script>
+//                 <script>
+//                     alert("Error!", "Message was not sent...", "error");
+//                 </script>
             
-            <?php
-        }
-    }
+//             <?php
+//         }
+//     }
         
             
-?>
+// ?>
 
 <!doctype html>
 <html lang="zxx">
